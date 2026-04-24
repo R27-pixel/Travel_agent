@@ -1,0 +1,30 @@
+# Local secrets
+.env
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python cache and build output
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+build/
+dist/
+*.egg-info/
+
+# Local server logs
+server.out.log
+server.err.log
+*.log
+
+# Generated travel plans
+travel_plan.txt
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

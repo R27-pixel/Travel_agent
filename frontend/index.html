@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Travel Planner</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="planner">
+        <aside class="panel input-panel" aria-label="Trip request">
+          <div class="brand-row">
+            <div class="brand-mark" aria-hidden="true">✈</div>
+            <div>
+              <p class="eyebrow">Multi-agent travel desk</p>
+              <h1>Plan a trip that feels already half packed.</h1>
+            </div>
+          </div>
+
+          <form id="plannerForm">
+            <label>
+              Destination
+              <input id="destination" name="destination" value="Kyoto, Japan" autocomplete="off" required>
+            </label>
+
+            <div class="form-grid">
+              <label>
+                Days
+                <input id="duration_days" name="duration_days" type="number" min="1" max="30" value="7" required>
+              </label>
+
+              <label>
+                Style
+                <select id="travel_style" name="travel_style">
+                  <option value="budget">Budget</option>
+                  <option value="mid-range" selected>Mid-range</option>
+                  <option value="luxury">Luxury</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              Interests
+              <textarea id="interests" name="interests" rows="4">temples, food, gardens, quiet neighborhoods</textarea>
+            </label>
+
+            <button id="submitButton" type="submit">
+              <span>Generate Travel Plan</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+
+          <div class="agent-stack" aria-label="Planning agents">
+            <div class="agent is-active" data-agent="research">
+              <span></span>
+              <p>Research</p>
+            </div>
+            <div class="agent" data-agent="itinerary">
+              <span></span>
+              <p>Itinerary</p>
+            </div>
+            <div class="agent" data-agent="budget">
+              <span></span>
+              <p>Budget</p>
+            </div>
+            <div class="agent" data-agent="report">
+              <span></span>
+              <p>Report</p>
+            </div>
+          </div>
+        </aside>
+
+        <section class="workspace" aria-live="polite">
+          <div class="map-visual" aria-hidden="true">
+            <div class="route route-one"></div>
+            <div class="route route-two"></div>
+            <span class="pin pin-one"></span>
+            <span class="pin pin-two"></span>
+            <span class="pin pin-three"></span>
+          </div>
+
+          <div class="result-header">
+            <div>
+              <p class="eyebrow">Your generated dossier</p>
+              <h2 id="resultTitle">Ready when you are</h2>
+            </div>
+            <button id="copyButton" class="ghost-button" type="button" disabled>Copy</button>
+          </div>
+
+          <div id="status" class="status">
+            Choose a destination and let the agents assemble research, itinerary, budget, and final report.
+          </div>
+
+          <article id="result" class="result empty">
+            <p>Results will appear here as a polished travel plan.</p>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
