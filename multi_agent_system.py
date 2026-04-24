@@ -20,10 +20,10 @@ Usage
 
 Requirements
 ------------
-    pip install langchain langchain-openai langgraph
+    pip install langchain langchain-groq langgraph
 
 Set your API key before running:
-    export OPENAI_API_KEY="sk-..."
+    export groq_API_KEY="sk-..."
 """
 
 from __future__ import annotations
@@ -93,10 +93,10 @@ class TravelState(TypedDict):
 
 def get_llm() -> ChatGroq:
     load_local_env()
-    api_key = os.getenv("OPENAI_API_KEY")
+    api_key = os.getenv("groq_API_KEY")
     if not api_key:
-        print("\n[ERROR] OPENAI_API_KEY environment variable is not set.")
-        print("Export it with:  export OPENAI_API_KEY='sk-...'")
+        print("\n[ERROR] groq_API_KEY environment variable is not set.")
+        print("Export it with:  export groq_API_KEY='sk-...'")
         sys.exit(1)
     return ChatGroq(model="llama-3.1-8b-instant", temperature=0.7)
 

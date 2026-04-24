@@ -25,10 +25,10 @@ The planner takes a destination, trip length, travel style, and interests, then 
 ## Requirements
 
 - Python 3.10+
-- An OpenAI API key
+- An Groq API key
 - Python packages:
   - `langchain`
-  - `langchain-openai`
+  - `langchain-grpq`
   - `langgraph`
 
 If you already have the included `.venv`, use that environment.
@@ -38,14 +38,14 @@ If you already have the included `.venv`, use that environment.
 Create a `.env` file in the project root:
 
 ```env
-OPENAI_API_KEY="your-api-key-here"
+GROQ_API_KEY="your-api-key-here"
 ```
 
 If you need to install dependencies:
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install langchain langchain-openai langgraph
+.\.venv\Scripts\python.exe -m pip install langchain langchain-groq langgraph
 ```
 
 ## Run The Web App
